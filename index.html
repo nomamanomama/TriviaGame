@@ -15,9 +15,24 @@
 <body>
     <div class="jumbotron"><h1>Trivia Game</h1></div>
     <div class="container">
-        <div class="row question">Question goes here.</div> 
-        <div class="row timer">Timer goes here.</div> 
-        <div class="row answers">Answers go here.</div> 
+        <section class="start-screen">
+            <button class="btn btn-primary" id="start">Start</button>
+        </section>
+        <section class="question-screen">
+            <div class="row question">Question goes here.</div>
+            <div class="row timer">Timer goes here.</div>
+            <div class="row answer-choices">
+                <div class="answer1" id="0">answer 1</div><hr>
+                <div class="answer2" id="1">answer 2</div><hr>
+                <div class="answer3" id="2">answer 3</div><hr>
+                <div class="answer4" id ="3">answer 4</div><hr>
+                Answers go here.
+            </div>
+        </section>
+        <section class="answer-screen">
+            <div class="row answer">Correct Answer is: </div>
+            <div class="row reward">Reward goes here.</div>
+        </section>
     </div>
 
 
