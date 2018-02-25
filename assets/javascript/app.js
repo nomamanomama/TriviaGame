@@ -214,7 +214,7 @@ var q20 = new Question(
     20,
     "What year did the Titanic sink?",
     ["1908", "1915", "1912", "1918"],
-    1,
+    2,
     "Titanic sank on April 15, 1912. The White Star Liner Titanic sank after striking an iceberg in the North Atlantic Ocean. Over 1500 passengers lost their lives during one of the worst peacetime maritime disasters in history. This tragedy lead to a concerted effort to devise an acoustic means of discovering objects in the water ahead of a moving vessel.",
     "<img  width='320' height='180' src='./assets/images/q20-1.jpg' alt='titanic sailing'>"
 );
@@ -273,7 +273,7 @@ var timer = {
 var game = {
     isPlaying:false,
     questions:questionArray,
-    answerTime:5,
+    answerTime:30,
     currentQuestion:-1,
     numCorrect:0,
     
