@@ -46,3 +46,25 @@ h3 {
 .answer-option:hover {
     background-color: #e9ecef3f;
 }
+
+.answer {
+    padding-top: 2rem;
+    color: aquamarine;
+    text-align: left;
+}
+
+.correct {
+    text-align: left;
+}
+
+#answer-message {
+    color: aqua;
+    font-weight: 800;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.reward {
+    text-align: left;
+    align-content: left;
+}
