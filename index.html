@@ -13,15 +13,18 @@
     <title>Trivia Game</title>
 </head>
 <body>
-    <div class="jumbotron"><h1>Trivia Game</h1></div>
+    <div class="jumbotron"><h1>Ocean Trivia Game</h1></div>
     <div class="container">
         <section class="start-screen">
             <button class="btn btn-primary" id="start">Start</button>
         </section>
         <section class="question-screen">
-            <div class="row question">Question goes here.</div>
-            <div class="row timer" id="gameTimer">Timer goes here.</div>
-            <div class="row answer-choices">
+            <div class="row timer justify-content-center flex-no-wrap"><h3>Time remaining: &nbsp<div id="gameTimer"></div></h3></div>
+            <div class="row  justify-content-center"><h3>
+                <div class="question"></div>
+            </h3></div>
+            
+            <div class="row answer-choices justify-content-center"> 
                 <div class="col-12 answer-options">
                     <div class="row answer-option" id="answer1" value="0">answer 1</div>
                     <div class="row answer-option" id="answer2" value="1">answer 2</div>
@@ -31,8 +34,8 @@
             </div>
         </section>
         <section class="answer-screen">
-            <div class="row answer">Correct Answer is: </div>
-            <div class="row reward">Reward goes here.</div>
+            <div class="row justify-content-center"><h3>Correct Answer is:<b><div class = "answer"></div> </b></h3></div>
+            <div class="row reward justify-content-center">Reward goes here.</div>
         </section>
     </div>
 

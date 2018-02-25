@@ -1,0 +1,48 @@
+body {
+    background: url("../../assets/images/ocean.jpg");
+    background-repeat: no-repeat;
+    background-color: rgb(3, 5, 24);
+    background-size: 100%;
+    text-align: center;
+    align-content: center;
+    color: white;
+    font-size: 16px;
+    padding: 1rem;
+}
+
+.jumbotron {
+    background-color: #e9ecef0f;
+    color: white;
+    align-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#start {
+    width: 150px;
+}
+
+.row {
+    text-align: center;
+    align-content: center;
+}
+
+.answer-options {
+    margin: 40px 300px;
+}
+
+.answer-option {
+    background-color: #e9ecef0f;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.answer-option:hover {
+    background-color: #e9ecef3f;
+}
