@@ -250,7 +250,7 @@ var timer = {
     count: function () {
         $("#gameTimer").text(timer.time);
         timer.time--;
-        console.log(timer.time);       
+        // console.log(timer.time);       
         if (timer.time < 0) { //the time has run out with no answer
            timer.stop(); 
            game.questionEnded();
@@ -287,7 +287,9 @@ var game = {
     displayCurrentQuestion: function (display) {
         if(display)
         {  
+           
             var curQuestion = this.questions[this.currentQuestion];
+            console.log("display question " + game.currentQuestion);
             $(".question").text(curQuestion.question);
             $("#answer1").text(curQuestion.answers[0]);
             $("#answer2").text(curQuestion.answers[1]);
@@ -301,6 +303,7 @@ var game = {
     },
     displayCurrentAnswer: function (display) {
         if(display){
+            console.log("display answer for question " + game.currentQuestion);
             var curQuestion = this.questions[this.currentQuestion];
             $(".answer").text(curQuestion.answers[curQuestion.answerIndex]);
             //display reward description and pic/gif
@@ -318,7 +321,9 @@ var game = {
         timer.stop();
         if (typeof answer == "undefined")//player didn't answer
         {
+            console.log("time's up - no answer");
             $("#answer-message").text("TIME'S UP!");
+            $("#answer-message").css("color","#d5008c");
             //display no answer message
             this.displayCurrentQuestion(false);
             this.displayCurrentAnswer(true);
@@ -326,14 +331,18 @@ var game = {
             
         } 
         else if (this.isAnswerCorrect(answer)) {
+            console.log("answer correct");
             //correctly answered
             this.numCorrect++;
             $("#wins").text(this.numCorrect);
             $("#answer-message").text("CORRECT! Good Job!");
+            $("#answer-message").css("color", "#05f2fc");
             winAudio.play();
         }
         else{
+            console.log("answer incorrect");
             $("#answer-message").text("INCORRECT");
+            $("#answer-message").css("color", "#d5008c");
             loseAudio.play();
         }
     },
@@ -345,6 +354,7 @@ var game = {
             return false;    
     },
     gameOver: function (){
+        console.log("game over");
         this.isPlaying = false;
         this.displayCurrentAnswer(false);
         $("#start").text("Play Again");
@@ -397,7 +407,6 @@ $(document).ready(function () {
         game.displayCurrentQuestion(true);
     }); //close start on click function
 
-
     $(".answer-option").on("click", function () {
         var userAnswer = $(this).attr("value");
         console.log("Answer clicked");
@@ -414,7 +423,17 @@ $(document).ready(function () {
 
     }); //close answer-option on click function
 
+    $(document).keyup( function(event) {
+        if (event.key === '-'){ // for '-' key make the game go faster
+            game.answerTime = 7;
+        }
+        else if (event.key === '+') {// restore to original time 30 sec
+            game.answerTime = 30;
+        }
+        
+        console.log ("question time now = " + game.answerTime);
 
+    });
 
 
 
